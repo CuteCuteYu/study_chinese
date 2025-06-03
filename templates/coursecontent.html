@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.Title}} - 课程详情</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/coursecontent.css">
+</head>
+<body>
+    <div class="layout-container">
+        <div class="course-detail">
+            <h1>{{.Title}}</h1>
+            <div class="course-description">
+                <h3>课程描述</h3>
+                <p>{{.Description}}</p>
+            </div>
+            <div class="course-content">
+                <h3>课程内容</h3>
+                <p>{{.Content}}</p>
+            </div>
+            <div class="back-button">
+                <a href="/" class="button">返回首页</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

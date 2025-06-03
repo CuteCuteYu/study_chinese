@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.title}}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="layout-container">
+        <div class="top-row">
+            <div class="nav-card">
+                <nav>
+                    <a href="/">首页</a>
+                    {{if .user}}
+                    
+                    {{if eq .user "admin"}}
+                    <a href="/admin">后台管理</a>
+                    {{end}}
+                    <a href="/?action=logout">退出登录</a>
+                    {{end}}
+                </nav>
+            </div>
+            
+            <div class="user-card">
+                <h2>欢迎, {{.user}}!</h2>
+            </div>
+        </div>
+    
+        <div class="course-card">
+            <h2>今日推荐课程</h2>
+            {{if .courses}}
+            <div class="course-list">
+                {{range .courses}}
+                <div class="course-item" onclick="window.location.href='/course/get?key={{.Key}}'">
+                    <h3>{{.Title}}</h3>
+                    <p>{{.Description}}</p>
+                </div>
+                {{end}}
+            </div>
+            {{else}}
+            <p>暂无推荐课程</p>
+            {{end}}
+        </div>
+    </div>
+</body>
+</html>
